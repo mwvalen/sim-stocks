@@ -1,5 +1,5 @@
 import * as moduleAlias from 'module-alias';
-const sourcePath = process.env.NODE_ENV === 'development' ? 'src' : 'build';
+const sourcePath = process.env.NODE_ENV === 'src';
 moduleAlias.addAliases({
   '@server': sourcePath,
   '@config': `${sourcePath}/config`,
@@ -12,7 +12,7 @@ import http from 'http';
 import { logger } from '@config/logger';
 
 const host = process.env.HOST || '0.0.0.0';
-const port = process.env.PORT || '5000';
+const port = process.env.PORT || '5111';
 
 async function startServer() {
   const app = createServer();
